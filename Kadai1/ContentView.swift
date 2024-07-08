@@ -2,6 +2,8 @@
 //  ContentView.swift
 //  Kadai1
 //
+//  Created by nobu0621 on 2024/07/06.
+//
 
 import SwiftUI
 
