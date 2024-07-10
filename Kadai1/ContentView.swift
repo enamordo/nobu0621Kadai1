@@ -17,14 +17,19 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            TextField("数字を入力してください", text: $inputNumber1).textFieldStyle(.roundedBorder)
-            TextField("数字を入力してください", text: $inputNumber2).textFieldStyle(.roundedBorder)
-            TextField("数字を入力してください", text: $inputNumber3).textFieldStyle(.roundedBorder)
-            TextField("数字を入力してください", text: $inputNumber4).textFieldStyle(.roundedBorder)
-            TextField("数字を入力してください", text: $inputNumber5).textFieldStyle(.roundedBorder)
+            TextField("", text: $inputNumber1)
+            TextField("", text: $inputNumber2)
+            TextField("", text: $inputNumber3)
+            TextField("", text: $inputNumber4)
+            TextField("", text: $inputNumber5)
             HStack {
                 Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-                totalNumber = add(number1: Int(inputNumber1) ?? 0, number2: Int(inputNumber2) ?? 0, number3: Int(inputNumber3) ?? 0, number4: Int(inputNumber4) ?? 0, number5: Int(inputNumber5) ?? 0)
+                let number1 = Int(inputNumber1) ?? 0
+                let number2 = Int(inputNumber2) ?? 0
+                let number3 = Int(inputNumber3) ?? 0
+                let number4 = Int(inputNumber4) ?? 0
+                let number5 = Int(inputNumber5) ?? 0
+                totalNumber = String(number1 + number2 + number3 + number4 + number5)
                 }
                 Spacer()
             }
@@ -35,16 +40,11 @@ struct ContentView: View {
                 Spacer()
             }
         }
+        // textFieldStyleをまとめる
+        .textFieldStyle(RoundedBorderTextFieldStyle())
         .padding()
         Spacer()
     }
-}
-
-/* 下記エラーになるため、メソッド化して処理を分割:
- The compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expression
- */
-func add(number1: Int, number2: Int, number3: Int, number4: Int, number5: Int) -> String {
-    return String(number1 + number2 + number3 + number4 + number5)
 }
 
 #Preview {
