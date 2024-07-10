@@ -23,7 +23,7 @@ struct ContentView: View {
             TextField("", text: $inputNumber4)
             TextField("", text: $inputNumber5)
             HStack {
-                Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
+                Button("Button") {
                 let number1 = Int(inputNumber1) ?? 0
                 let number2 = Int(inputNumber2) ?? 0
                 let number3 = Int(inputNumber3) ?? 0
